@@ -23,34 +23,37 @@ let album1 = {
     title: 'Midnights', 
     artist: 'Taylor Swift',
     yearPublished: 2022
-} // end album1
-
+}; // end album1
 
 let album2 = {
     title: 'Being Funny In a Foregin Language', 
     artist: 'The 1975',
     yearPublished: 2022
-} // end album2
+}; // end album2
+
 let album3 = {
     title: 'The Band CAMINO', 
     artist: 'The Band CAMINO',
     yearPublished: 2021
 } // end album3
+
 let album4 = {
     title: 'Evermore', 
     artist: 'Taylor Swift',
     yearPublished: 2020
-} // end album4
+}; // end album4
+
 let album5 = {
     title: `Harry's House`, 
     artist: 'Harry Styles',
     yearPublished: 2022
-} // end album5
+}; // end album5
+
 let album6 = {
     title: 'Future Shine', 
     artist: 'Flor',
     yearPublished: 2022
-} // end album6
+}; // end album6
 console.log( 'adding album1 to collection', addToCollection(album1.title, album1.artist, album1.yearPublished));
 console.log( 'adding album2 to collection', addToCollection(album2.title, album2.artist, album2.yearPublished));
 console.log( 'adding album3 to collection', addToCollection(album3.title, album3.artist, album3.yearPublished));
@@ -71,17 +74,20 @@ function showCollection( array ) {
 
 console.log(showCollection(collection));
 
-function findByArtist( artist ) {
+function findByArtist(artist) {
+    console.log('inside findByArtist', artist);
     let results = [];
-    for (let i = 0 ; i < collection.length; i++) {
+    for (let i = 0; i < collection.length; i++) {
             if (artist === collection[i].artist) {
-                console.log( 'looks like we found a match!');
-                results.push(collection[i].artist);
+                results.push(collection[i]);
+                console.log('Looks like we found a match!');
             } else {
-                console.log( 'no matches here');
-            };
+               console.log( 'no matches!') 
+            } 
+        }
+
         return results;
-    }
 }
 
-console.log(findByArtist('Taylor Swift'));
+console.log(findByArtist('Flor'));
+
